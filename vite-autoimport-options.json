@@ -1,0 +1,11 @@
+[
+  {
+    "@/store/modules/layout": ["useLayoutStore", "useLayoutStoreWithOut"]
+  },
+  {
+    "@/store/modules/menu": ["useMenuStore", "useMenuStoreWithOut"]
+  },
+  {
+    "@/store/modules/user": ["useUserStore", "useUserStoreWithOut"]
+  }
+]

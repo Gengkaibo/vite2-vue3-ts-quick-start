@@ -1,0 +1,67 @@
+// 自定义主题切换：document.documentElement.style.setProperty('--kb-theme-color', '#ff0000');
+:root {
+  // 自定义常量
+  --kb-const-bg-color: #ffffff;
+  --kb-const-bg-color-dark: #111214;
+  --kb-const-el-main-bg-light: #EBEBEC;
+  --kb-const-el-main-bg-dark: #212121;
+  // 自定义常量 用来修改element-ui内置色
+  --kb-const-el-menu-text-color: #2d3035;
+  --kb-const-el-menu-text-color-dark: #d9e6eb;
+  --kb-const-el-menu-text-color-active: #409eff;
+  --kb-const-el-menu-hover-text-color: #409eff;
+  --kb-const-el-menu-hover-bg-color: transparent;
+  --kb-const-el-color-primary: #409eff;
+
+}
+
+:root {
+  // yiyi对应下边的element内置色,修改下边这几项定义请用上边的常量
+  --el-menu-hover-bg-color-custom: var(--kb-const-el-menu-hover-bg-color);
+  --el-menu-hover-text-color-custom: var(--kb-const-el-menu-hover-text-color);
+  --el-menu-text-color-custom: var(--kb-const-el-menu-text-color);
+  --el-menu-active-color-custom: var(--kb-const-el-menu-text-color-active);
+  --el-color-primary-custom: var(--kb-const-el-color-primary);
+}
+
+* {
+  // 修改element-ui内置色,修改下边这几项定义请用对应的变量
+  --el-menu-hover-bg-color: var(--el-menu-hover-bg-color-custom);
+  --el-menu-hover-text-color: var(--el-menu-hover-text-color-custom);
+  --el-menu-text-color: var(--el-menu-text-color-custom);
+  --el-menu-active-color: var(--el-menu-active-color-custom);
+  --el-color-primary: var(--el-color-primary-custom);
+  --el-dropdown-menuItem-hover-color: var(--el-color-primary-custom);
+
+}
+
+html:not(.dark) {
+  --kb-custom-bg-color-current: var(--kb-const-bg-color);
+  --el-menu-text-color-custom: var(--kb-const-el-menu-text-color);
+  --kb-custom-el-main-bg-color: var(--kb-const-el-main-bg-light);
+}
+
+html.dark {
+  --kb-custom-bg-color-current: var(--kb-const-bg-color-dark);
+  --el-menu-text-color-custom: var(--kb-const-el-menu-text-color-dark);
+  --kb-custom-el-main-bg-color: var(--kb-const-el-main-bg-dark);
+}
+
+.hover-to-active {
+  color: var(--el-menu-text-color);
+}
+
+.hover-to-active:hover {
+  cursor: pointer;
+  color: var(--el-menu-hover-text-color) !important;
+}
+
+.el-drawer {
+  background-color: var(--kb-custom-bg-color-current);
+}
+
+.el-button:hover {
+  background: var(--el-color-primary-custom);
+  border-color: var(--el-color-primary-custom);
+  filter: hue-rotate(10deg);
+}
